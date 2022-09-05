@@ -1,6 +1,6 @@
 # Client Dashboard - A management dashboard for clients
 
-##DESCRIPTION
+## DESCRIPTION
 A Web App designed to manage inventory, employees, orders and view balance sheet.
 This app was designed with ReactJS and Syncfusion.
 ReactJS was chosen as the preferred framework for this project.
