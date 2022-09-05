@@ -1,10 +1,10 @@
 # Client Dashboard - A management dashboard for clients
 
 ## DESCRIPTION
-A Web App designed to manage inventory, employees, orders and view balance sheet.
-This app was designed with ReactJS and Syncfusion.
-ReactJS was chosen as the preferred framework for this project.
-Syncfusion is a powerfool tool used to manage and organize data with ease.
+A Web App designed to manage inventory, employees, orders and view balance sheet. <br>
+This app was designed with ReactJS and Syncfusion. <br>
+ReactJS was chosen as the preferred framework for this project. <br>
+Syncfusion is a powerfool tool used to manage and organize data with ease. <br>
 The client has the ability to read, write, track order, update order when the state of the order changes.
 
 ## FEATURES
