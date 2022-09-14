@@ -1,4 +1,10 @@
 # Client Dashboard - A management dashboard for clients
+<p align="center" style = "float:left">
+  <img src="public/profile.png"  height="350" title="hover text">
+</p>
+
+## SEE DEMO VIA THIS LINK
+https://client-dashboard-zeta.vercel.app/
 
 ## DESCRIPTION
 A Web App designed to manage inventory, employees, orders and view balance sheet. <br>
