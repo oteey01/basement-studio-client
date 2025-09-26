@@ -8,6 +8,7 @@ import {
   ecomPieChartData,
 } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
+import NairaIcon from "../assets/comps/NairaIcon";
 
 const Ecommerce = () => {
   const { currentColor } = useStateContext();
@@ -18,8 +19,9 @@ const Ecommerce = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl">$100,000.20</p>
+              <p className="font-bold text-gray-400">Revenue</p>
+              <div className="text-2xl flex items-center"><span><NairaIcon/></span>
+              <p>3,560,009.20</p></div>
             </div>
           </div>
           <div className="mt-6 ">
@@ -58,7 +60,7 @@ const Ecommerce = () => {
       </div>
 
       <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-grat-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
+        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
           <div className="flex justify-between ">
             <p className="font-semibold text-xl">Revenue Updates</p>
             <div className="flex items-center gap-4 ">
