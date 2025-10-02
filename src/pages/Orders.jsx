@@ -91,7 +91,7 @@ const Orders = () => {
   };
   const handleEdit = (id, props) => {
     setPostState("update");
-    console.log(id, props);
+    //(id, props);
     setProjectFormData({
       id: id,
       projectName: props.projectName,
@@ -112,18 +112,18 @@ const Orders = () => {
   ) => {
     if (postState === "update") {
       // if there is content to be edited update project
-      console.log(values.id);
+      //(values.id);
 
       updateProjectMutation.mutate(
         values,
         values.id
       );
     } else {
-      console.log("creating...");
+      //("creating...");
       // create new instead
       addProjectMutation.mutate(values);
     }
-    console.log("submitting...");
+    //("submitting...");
     setSubmitting(false);
     setProjectFormData(null);
     closeCreateModal();

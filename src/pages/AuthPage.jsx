@@ -14,7 +14,7 @@ const validationSchema = Yup.object({
     .required("Please enter employee name"),
   email: Yup.string()
     .email()
-    .required("please select designation"),
+    .required("please select email"),
   password: Yup.string()
     .min(6, "Must be more than 5 characters")
     .required(),
@@ -34,7 +34,7 @@ const AuthPage = () => {
   };
 
   const handleSubmit = (values) => {
-    console.log("submitting...");
+    //("submitting...");
     authMode === "login"
       ? login.mutate(values)
       : signUp.mutate(values);
@@ -51,11 +51,11 @@ const AuthPage = () => {
         <div className="w-full max-w-[400px] flex flex-col justify-center items-center">
           <Formik
             initialValues={{
-              fullName: "JJK",
-              email: "jskfjf@gmail.com",
-              password: "akjgakgj",
+              fullName: "",
+              email: "",
+              password: "",
             }}
-            validationSchema={validationSchema}
+            // validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
             {({
@@ -129,7 +129,7 @@ const AuthPage = () => {
                   <button
                     type="submit"
                     disabled={
-                      !isValid || isSubmitting
+                      !isValid
                       // postMutation.isLoading
                     }
                     className=" disabled:opacity-30 disabled:cursor-not-allowed text-white py-2 px-2 rounded-sm data-[disabled]:opacity-30"

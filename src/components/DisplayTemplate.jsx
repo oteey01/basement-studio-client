@@ -62,7 +62,7 @@ const DisplayTemplate = ({
   };
   const handleEdit = (id, props) => {
     setPostState("update");
-    console.log(id, props);
+    //(id, props);
 
     setFormData({
       id: id,
@@ -81,15 +81,15 @@ const DisplayTemplate = ({
   ) => {
     if (postState === "update") {
       // if there is content to be edited update project
-      console.log(values.id);
+      //(values.id);
 
       updateMutation.mutate(values, values.id);
     } else {
-      console.log("creating...");
+      //("creating...");
       // create new instead
       postMutation.mutate(values);
     }
-    console.log("submitting...");
+    //("submitting...");
     setSubmitting(false);
     setFormData(null);
     closeCreateModal();
@@ -158,7 +158,7 @@ const DisplayTemplate = ({
 
                 /* and other goodies */
               }) => {
-                console.log(formData);
+                //(formData);
                 return (
                   <form
                     onSubmit={handleSubmit}

@@ -5,7 +5,7 @@ const fileTypes = ["JPG", "PNG"];
 
 function DragDrop({ handleChange, ...props }) {
   const handleDrop = (file) => {
-    console.log(file);
+    //(file);
     handleChange(file);
   };
   return (

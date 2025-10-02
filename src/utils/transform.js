@@ -24,6 +24,9 @@ export const transformEmployeeData = (data) => {
       location: data?.location,
       hireDate: data?.hireDate,
       id: data?._id,
+      image: data?.filePath
+        ? `${baseURL}${data?.filePath}`
+        : "",
     }))
     ?.reverse();
 };
@@ -36,6 +39,9 @@ export const transformCustomerData = (data) => {
       // dateJoined:
       location: data?.location,
       id: data?._id,
+      image: data?.filePath
+        ? `${baseURL}${data?.filePath}`
+        : "",
     }))
     ?.reverse();
 };

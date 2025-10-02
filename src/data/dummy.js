@@ -1186,8 +1186,8 @@ export const employeeGrid = ({
     },
     {
       accessorKey: "email",
-      header: 'Email',
-   // width: "150",
+      header: "Email",
+      // width: "150",
       // textAlign: "Center",
     },
     {
@@ -1254,21 +1254,27 @@ export const customerGrid = ({
       ),
     }),
 
-    {
-      header: "Image",
-      accessorKey: "image",
-      accessorFn: (row) => row.image,
-      cell: gridOrderImage,
+    // {
+    //   header: "Image",
+    //   accessorKey: "image",
+    //   accessorFn: (row) => row.image,
+    //   cell: gridOrderImage,
 
-      // template: gridOrderImage,
-      // textAlign: "Center",
-      // width: "120",
-    },
+    //   // template: gridOrderImage,
+    //   // textAlign: "Center",
+    //   // width: "120",
+    // },
     {
       accessorKey: "customerName",
       header: "customer",
       // width: "150",
       // // editType: "dropdownedit",
+      // textAlign: "Center",
+    },
+    {
+      accessorKey: "email",
+      header: "Email",
+      // width: "150",
       // textAlign: "Center",
     },
     {
@@ -1285,13 +1291,7 @@ export const customerGrid = ({
       // width: "150",
       // textAlign: "Center",
     },
-    {
-      accessorKey: "email",
-      header: 'Email',
-   // width: "150",
-      // textAlign: "Center",
-    },
-   
+
     // {
     //   headerText: "Status",
     //   field: "status",

@@ -56,6 +56,7 @@ const Employees = () => {
   const updateMutation = useUpdateEmployees();
   const deleteMutaion = useDeleteEmployees();
 
+  // console.log(getMutation.data);
   return (
     <DisplayTemplate
       postMutation={postMutation}
@@ -82,7 +83,7 @@ const FormField = ({
   setUploadedPic,
   uploadedPic,
 }) => {
-  console.log(values);
+  //(values);
   return (
     <div className="w-full max-w-[400px] flex flex-col gap-3">
       <Input

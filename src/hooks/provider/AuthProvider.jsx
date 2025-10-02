@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const { data: user, isLoading } = useProfile();
 
-  console.log(user);
+  //(user);
   return (
     <AuthContext.Provider
       value={{ user, isLoading }}

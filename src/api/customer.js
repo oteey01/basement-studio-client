@@ -12,6 +12,7 @@ export const fetchCustomers = () =>
 export const addcustomer = async (
   newCustomer
 ) => {
+  console.log(newCustomer);
   return api
     .post(customerRoute, newCustomer)
     .then((res) => {
@@ -29,7 +30,7 @@ export const updateCustomer = async (
       updatedCustomer
     )
     .then((res) => {
-      console.log(res.data);
+      //(res.data);
       return res.data;
     });
 };
@@ -37,7 +38,7 @@ export const deleteCustomer = async (id) => {
   return api
     .delete(`${customerRoute}/${id}`)
     .then((res) => {
-      console.log(res.data);
+      //(res.data);
       return res.data;
     });
 };

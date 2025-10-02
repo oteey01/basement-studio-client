@@ -36,7 +36,7 @@ export const updateProject = async (
       }
     )
     .then((res) => {
-      console.log(res.data);
+      //(res.data);
       return res.data;
     });
 };
@@ -44,7 +44,7 @@ export const deleteProject = async (id) => {
   return api
     .delete(`${projectRoute}/${id}`)
     .then((res) => {
-      console.log(res.data);
+      //(res.data);
       return res.data;
     });
 };

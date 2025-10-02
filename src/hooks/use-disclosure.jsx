@@ -16,10 +16,12 @@ import { useState } from "react";
  *                                between `true` and `false`.
  */
 export const useDisclosure = (initialValue) => {
-  const [isOpen, setIsOpen] = useState(initialValue || false);
+  const [isOpen, setIsOpen] = useState(
+    initialValue || false
+  );
 
   const close = () => {
-    console.log('click close')
+    //('click close')
     setIsOpen(false);
   };
 

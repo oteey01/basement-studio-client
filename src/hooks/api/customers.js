@@ -30,7 +30,7 @@ export function useAddcustomers() {
       toast.success("Successfully created!");
     },
     onError: (err) => {
-      console.log(err);
+      //(err);
       toast.error("Something went wrong");
     },
   });
@@ -49,7 +49,7 @@ export function useUpdateCustomers() {
     },
     onError: (err) => {
       toast.wrong("Something wrong");
-      console.log(err);
+      //(err);
     },
   });
 }
@@ -65,7 +65,7 @@ export function useDeleteCustomers() {
     },
     onError: (err) => {
       toast.wrong("Something wrong");
-      console.log(err);
+      //(err);
     },
   });
 }

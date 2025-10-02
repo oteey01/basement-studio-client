@@ -31,7 +31,7 @@ export function useLogin() {
   return useMutation({
     mutationFn: login,
     onSuccess: (data) => {
-      console.log(data);
+      //(data);
       localStorage.setItem(
         "accessToken",
         data.access_token
@@ -54,7 +54,7 @@ export function useSignup() {
   return useMutation({
     mutationFn: signup,
     onSuccess: (data) => {
-      console.log(data);
+      //(data);
       localStorage.setItem(
         "accessToken",
         data.access_token
@@ -67,7 +67,7 @@ export function useSignup() {
       navigate("/");
     },
     onError: (err) => {
-      console.log(err);
+      //(err);
       toast.error("Something went wrong");
     },
   });

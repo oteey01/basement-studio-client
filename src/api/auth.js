@@ -5,7 +5,7 @@ const authRoute = "auth";
 
 export const fetchUser = async () =>
   api.get(profileRoute).then((res) => {
-    console.log("user profile");
+    //("user profile");
     return res.data;
   });
 
@@ -15,7 +15,7 @@ export const login = async (formData) =>
     .then((res) => res.data);
 
 export const signup = async (formData) => {
-  console.log("sign up");
+  //("sign up");
   return api
     .post(`${authRoute}/register`, formData)
     .then((res) => res.data);

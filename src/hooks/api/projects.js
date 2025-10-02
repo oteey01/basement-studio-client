@@ -28,7 +28,7 @@ export function useAddProjects() {
       toast.success("Successfully created!");
     },
     onError: (err) => {
-      console.log(err);
+      //(err);
       toast.error("Something went wrong");
     },
   });
@@ -45,7 +45,7 @@ export function useUpdateProjects() {
     },
     onError: (err) => {
       toast.wrong("Something wrong");
-      console.log(err);
+      //(err);
     },
   });
 }
@@ -61,7 +61,7 @@ export function useDeleteProjects() {
     },
     onError: (err) => {
       toast.wrong("Something wrong");
-      console.log(err);
+      //(err);
     },
   });
 }

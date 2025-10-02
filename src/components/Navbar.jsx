@@ -70,7 +70,7 @@ const Navbar = () => {
   } = useDisclosure();
   const navigate = useNavigate();
   const logout = useLogout();
-  // console.log(data);
+  // //(data);
   useEffect(() => {
     const handleResize = () =>
       setScreenSize(window.innerWidth);
