@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseURL = `http://localhost:3001`;
+export const baseURL = `https://basement-studio-server.onrender.com`;
 
 export const api = axios.create({
   baseURL: baseURL,
