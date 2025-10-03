@@ -7,6 +7,7 @@ import {
   useLogin,
   useSignup,
 } from "../hooks/api/auth";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = Yup.object({
   fullName: Yup.string()
@@ -25,6 +26,7 @@ const AuthPage = () => {
     useState("login");
   const { currentColor } = useStateContext();
   const signUp = useSignup();
+  const navigate = useNavigate();
   const login = useLogin();
 
   const toggleAuthMode = () => {
@@ -38,6 +40,7 @@ const AuthPage = () => {
     authMode === "login"
       ? login.mutate(values)
       : signUp.mutate(values);
+    navigate("/");
   };
 
   return (
