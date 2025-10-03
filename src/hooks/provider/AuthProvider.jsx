@@ -5,11 +5,15 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const { data: user, isLoading } = useProfile();
+  const isLoggedIn = localStorage.getItem(
+    "accessToken"
+  );
 
   //(user);
+
   return (
     <AuthContext.Provider
-      value={{ user, isLoading }}
+      value={{ user, isLoading, isLoggedIn }}
     >
       {children}
     </AuthContext.Provider>

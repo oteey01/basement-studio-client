@@ -12,11 +12,12 @@ import {
   Sidebar,
   ThemeSettings,
 } from "../components";
+import { useProfile } from "../hooks/api/auth";
 
 export default function ProtectedRoute({
   children,
 }) {
-  const { user, isLoading } = useAuth();
+  const { data: user, isLoading } = useProfile();
 
   if (isLoading) return <p>Loading...</p>;
   if (!user)

@@ -15,16 +15,16 @@ import {
 } from "react-router-dom";
 
 export function useProfile() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return useQuery({
     queryKey: ["auth"],
     queryFn: fetchUser,
-    enabled: !!localStorage.getItem(
-      "accessToken"
-    ),
-    onSuccess: () => {
-      navigate("/");
+    onSuccess: (data) => {
+      console.log(data);
     },
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
 }
 
@@ -47,7 +47,7 @@ export function useLogin() {
       navigate("/");
 
       queryClient.invalidateQueries({
-        queryKey: ["me"],
+        queryKey: ["me", "auth"],
       });
     },
   });
@@ -68,7 +68,10 @@ export function useSignup() {
         "refreshToken",
         data.refreshToken
       );
-      queryClient.invalidateQueries(["me"]);
+      queryClient.invalidateQueries([
+        "me",
+        "auth",
+      ]);
       navigate("/");
     },
     onError: (err) => {
@@ -82,6 +85,9 @@ export function useLogout() {
   const queryClient = useQueryClient();
   return () => {
     localStorage.clear();
+    queryClient.removeQueries("auth");
+    queryClient.invalidateQueries(["auth"]);
     queryClient.clear();
+    console.log("loging out...");
   };
 }

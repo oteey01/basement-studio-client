@@ -5,6 +5,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 import { useState } from "react";
 import {
   useLogin,
+  useProfile,
   useSignup,
 } from "../hooks/api/auth";
 import { useNavigate } from "react-router-dom";
@@ -26,8 +27,8 @@ const AuthPage = () => {
     useState("login");
   const { currentColor } = useStateContext();
   const signUp = useSignup();
-  const navigate = useNavigate();
   const login = useLogin();
+  const { data: user } = useProfile();
 
   const toggleAuthMode = () => {
     authMode === "login"
@@ -40,7 +41,6 @@ const AuthPage = () => {
     authMode === "login"
       ? login.mutate(values)
       : signUp.mutate(values);
-    navigate("/");
   };
 
   return (

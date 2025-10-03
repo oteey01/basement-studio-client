@@ -17,7 +17,10 @@ import UserProfile from "./UserProfile";
 import { useAuth } from "../hooks/provider/AuthProvider";
 import { Modal } from "./Modal";
 import { useDisclosure } from "../hooks/use-disclosure";
-import { useLogout } from "../hooks/api/auth";
+import {
+  useLogout,
+  useProfile,
+} from "../hooks/api/auth";
 import {
   Navigate,
   useNavigate,
@@ -62,7 +65,7 @@ const Navbar = () => {
     setScreenSize,
     currentColor,
   } = useStateContext();
-  const { user } = useAuth();
+  const { data: user, isLoading } = useProfile();
   const {
     isOpen: isLogoutOpen,
     close: closeLogout,
@@ -183,14 +186,16 @@ const Navbar = () => {
               src={avatar}
               alt="avatar"
             />
-            <p>
-              <span className=" text-gray-400 text-14">
-                Hi,{" "}
-              </span>{" "}
-              <span className="text-gray-400 font-bold ml-1 text-14">
-                {user?.fullName}
-              </span>
-            </p>
+            {!isLoading && (
+              <p>
+                <span className=" text-gray-400 text-14">
+                  Hi,{" "}
+                </span>{" "}
+                <span className="text-gray-400 font-bold ml-1 text-14">
+                  {user?.fullName}
+                </span>
+              </p>
+            )}
             <MdKeyboardArrowDown className=" text-gray-400 text-14" />
           </div>
         </TooltipComponent>
