@@ -18,9 +18,9 @@ export function useProfile() {
   return useQuery({
     queryKey: ["auth"],
     queryFn: fetchUser,
-    // enabled: !!localStorage.getItem(
-    //   "accessToken"
-    // ),
+    enabled: !!localStorage.getItem(
+      "accessToken"
+    ),
   });
 }
 
@@ -40,10 +40,10 @@ export function useLogin() {
         "refreshToken",
         data.refreshToken
       );
+      navigate("/");
       queryClient.invalidateQueries({
         queryKey: ["me"],
       });
-      navigate("/");
     },
   });
 }
