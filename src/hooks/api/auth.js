@@ -15,12 +15,16 @@ import {
 } from "react-router-dom";
 
 export function useProfile() {
+  const navigate = useNavigate();
   return useQuery({
     queryKey: ["auth"],
     queryFn: fetchUser,
     enabled: !!localStorage.getItem(
       "accessToken"
     ),
+    onSuccess: () => {
+      navigate("/");
+    },
   });
 }
 
@@ -41,6 +45,7 @@ export function useLogin() {
         data.refreshToken
       );
       navigate("/");
+
       queryClient.invalidateQueries({
         queryKey: ["me"],
       });
